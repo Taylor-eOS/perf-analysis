@@ -114,7 +114,8 @@ for line in lines:
 
 with open(output_addrs_path, "w") as f:
     for addr, pct in sorted(node_pct.items(), key=lambda kv: (-kv[1], -hit_count[kv[0]])):
-        f.write(f"0x{addr:x}\t{pct:.2f}%\thits={hit_count[addr]}\n")
+        #f.write(f"0x{addr:x}\t{pct:.2f}%\thits={hit_count[addr]}\n")
+        f.write(f"0x{addr:x}\n")
 
 with open(output_edges_path, "w") as f:
     for (caller, callee), pct in sorted(edges.items(), key=lambda kv: -kv[1]):
